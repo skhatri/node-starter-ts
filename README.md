@@ -2,6 +2,11 @@
 
 Shows todo tasks
 
+### Setting up DB
+```
+npm run pg
+```
+
 ### Progres Tracker Configuration
 
 Following env variables can be provided
