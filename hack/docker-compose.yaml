@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+    postgres:
+      image: postgres:13.5
+      environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=password
+          - POSTGRES_DB=postgres
+          - PGDATA=/var/lib/postgresql/data/pgdata
+          - APP=postgres
+      ports:
+        - "5432:5432"
+      volumes:
+        - ./data/postgres:/var/lib/postgresql/data
+        - ./init.d:/docker-entrypoint-initdb.d
+      container_name: postgres
+      networks:
+        noden:
+          aliases:
+            - postgres
+
+
+networks:
+  noden: {}
+
+
